@@ -1,0 +1,13 @@
+---
+services:
+  basicauth:
+    build:
+      context: .
+    ports:
+      - 80:80
+    environment:
+      BACKEND: nginx
+      LOGIN: me:secret
+
+  nginx:
+    image: nginx:latest
