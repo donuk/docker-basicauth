@@ -20,6 +20,7 @@ server {
         proxy_pass   http://$BACKEND;
         proxy_pass_request_headers      on;
         proxy_set_header Host            \$host;
+        proxy_set_header Authorization            \$http_x_authorization;
         auth_basic "$AUTH_REASON";
         auth_basic_user_file $PASSWDFILE;
     }
